@@ -1,0 +1,299 @@
+Jobs: {
+    Mr. Hungerford:         $5,000 dollars an hour, skill level has to be extremly high.
+    Delivery:               $8  A Hour, $-4 Pay for gas, Tips $1            $50,
+    Uber:                   *Random* $10            $20 a Trip  Tips $1-$50,
+    Pizza Worker:           $7          A Hour,
+    Fast-Food Worker:       $8 A Hour,
+    Mail-Man:               $10 A Hour,
+    Teacher:                $1500 A Month,
+    Developer:              Income Depends on software level, $50           $5000,
+    Sales:                  Delpends on the skill Math (Skills * 5 / tax 0.8)
+}
+
+Jobs: {
+    Delivery
+        Payment $8(a Hour) -$4(Pay for gas) ($random in tips)
+            $8 a Hour
+            -$4 for gas
+            Random In tips $1-$50
+        Minus
+            Tax
+            Sleep
+            Hunger
+            Thirst
+            Car Troubles
+        Things needed
+            Car
+            Gas
+            Enough sleep to not crash.
+    
+    Uber
+        Payments
+            Random on the trips
+            Random Tips $1-$50
+        Minus
+            Tax
+            Gas needed for trips
+            Sleep
+            Hunger
+            Thirst
+            Car Troubles
+        Things Needed
+            Car
+            Gas
+            Enough sleep to not crash.
+
+    Pizza Worker
+        Payment
+            $7 a Hour
+            Random as a rais $5 more
+            Random in Tips $1-$50
+        Minus
+            Tax
+            Sleep
+            Hunger
+            Thirst
+        Things Needed
+            Work Clothes
+            transportation
+
+    Fast-Food Worker
+        Payment
+            $8 a Hour
+            Random as a rais $5 more
+            Random in Tips $1-$50
+        Minus
+            Tax
+            Sleep
+            Hunger
+            Thirst
+        Things Needed
+            Work Clothes
+            transportation
+
+    Mail-Man
+        Payment
+            $10(a Hour)
+        Minus
+            Tax
+            Sleep
+            Hunger
+            Thirst
+        Things needed
+            Enough sleep to not crash.
+
+    Teacher
+        Payment
+            $1500(a Month)
+        Minus
+            Tax
+            Sleep
+            Hunger
+            Thirst
+        Things Needed
+            Sleep to teach.
+            transportation
+
+    Developer
+        Payments
+            Level 1         $50         $100
+            Level 2         $100        $500
+            Level 3         $500        $1000
+            Level 4         $1000       $2000
+            Level 5         $2000       $5000
+        Minus
+            Tax
+            Sleep
+            Hunger
+            Thirst
+        Software
+            Level 1 Software            $250
+            Level 2 Software            $500
+            Level 3 Software            $1K
+            Level 4 Software            $2.5K
+            Level 5 Software            $5K
+    Sales
+        PaymentS
+            Delpends on the skill Math (Skills * 5)
+        Minus
+            Tax
+            Sleep
+            Thirst
+            Hunger
+            Tax
+}
+
+BedList {
+    Trash Bed,
+    Okayish Bed,
+    Okay Bed,
+    Eh Bed,
+    Decent Bed,
+    Nice Bed,
+    Really Nice Bed,
+    Good Bed,
+    Luxary Bed,
+    Best Bed
+}
+
+Sleep Stats {
+    Wide Awake,
+    Alert,
+    Awake and Alert,
+    Rested,
+    Sleepy,
+    Drowsy,
+    Fatigued,
+    Tired,
+    Very Tired,
+    Drained,
+    Exhausted,
+    Sleep Deprived,
+    Completely Wiped Out
+}
+
+Player Status {
+    Normal
+    Cold
+    Flu
+    Covid
+    Pneumonia
+    Asthma
+    Allergies
+    Migraine
+    Stomach flu
+    Food poisoning
+}
+
+Car: {
+    Rusty: $500
+    Typical: $5,000
+    Normal: $20,000
+    Modern: $50,000
+    Luxury: $100,000
+    Mr. Hungerford's Car: $1,000,000
+}
+
+House: {
+    Apartment                       ($150 a Month), ($100 Bills Monthly)
+    Trailer House                   ($200 a Month), ($150 Bill Monthly)
+    Small House                     ($1,500), ($300 Bills Monthly)
+    Normal House                    ($5,000), ($400 Bills Monthly)
+    Big House                       ($15,000), ($500 Bills Monthly)
+    Mansion                         ($50,000), ($1000 Bills Yearly)
+    Palace                          ($100,000), ($2000 Bills Yearly)
+    Mr.Hungerford's House,          ($100,000,000), ($2,000,000 Bills Yearly)
+}
+
+
+Softwear: {
+    Level 1
+    Level 2 
+    ect..
+}
+
+Hardwear Names {
+    Potato,
+    Basic,
+    Low-end,
+    Budget,
+    Entry-level,
+    Mainstream,
+    Mid-range,
+    High-end,
+    Typical Streamer,
+    Professional,
+    Workstation,
+    Server-grade,
+    Supercomputer,
+    NASA,
+    Mr.Hungerford's PC,
+}
+
+Brain Status {
+    Smooth brain,
+    Pea brain,
+    Bird brain,
+    Empty-headed,
+    Dull-witted,
+    Slow on the uptake,
+    Average intelligence,
+    Quick-witted,
+    Bright-minded,
+    Sharp-minded,
+    Genius-level,
+    Einstein-level,
+    Mega-mind,
+    Big brain,
+    Hungerford Brain,
+}
+
+Skills {
+    Social skills,
+    Technical skills,
+    Management skills,
+    Research skills,
+    Presentation skills,
+    Sales skills,
+    Negotiation skills,
+    Teaching skills,
+    Writing skills,
+    Language skills,
+    Time management skills,
+    Hungerford Skill,
+}
+
+Types of Days {
+    Rewarding
+    Fulfilling
+    Productive
+    Satisfying
+    Inspiring
+    Interesting
+    Educational
+    Enlightening
+    Stimulating
+    Challenging
+    Exciting
+    Engaging
+    Thought-provoking
+    Enlightening
+    Empowering
+    Enriching
+    Eye-opening
+    Invigorating
+    Motivating
+    Transformative
+    Groundbreaking
+    Surprising
+    Gratifying
+    Enlivening
+    Refreshing
+    Hungerford type day
+}
+
+Foods {
+    Chicken             Life Points(+6)     Food(+3)     Thirst(-3)     Sanity(+3)      Cost($15)
+    Spaghetti           Life Points(+2)     Food(+5)     Thirst(-3)     Sanity(+4)      Cost($5)
+    Meatloaf            Life Points(+2)     Food(+3)     Thirst(-1)     Sanity(+5)      Cost($3)
+    Burrito             Life Points(+1)     Food(+2)     Thirst(-1)     Sanity(+3)      Cost($1)
+    Burger              Life Points(+1)     Food(+5)     Thirst(-3)     Sanity(+2)      Cost($7)
+    Hotdog              Life Points(+1)     Food(+2)     Thirst(-1)     Sanity(+1)      Cost($2)
+    Stake               Life Points(+1)     Food(+10)    Thirst(-6)     Sanity(+5)      Cost($32)
+    Pizza               Life Points(+1)     Food(+2)     Thirst(-1)     Sanity(+4)      Cost($12)
+    Taco                Life Points(+1)     Food(+1)     Thirst(-1)     Sanity(+2)      Cost($2)
+    Pie                 Life Points(+3)     Food(+3)     Thirst(-2)     Sanity(+1)      Cost($15)
+}
+
+Drinks {
+    Water               Life Points(+3)     Food(-2)     Thirst(+10)    Sanity(+5)      Cost($1)
+    Soda                Life Points(+1)     Food(-1)     Thirst(+5)     Sanity(+6)      Cost($2)
+    Iced Tea            Life Points(+1)     Food(-1)     Thirst(+7)     Sanity(+9)      Cost($3)
+    Lemonade            Life Points(+1)     Food(-1)     Thirst(+7)     Sanity(+5)      Cost($3)
+    Coffee              Life Points(+1)     Food(-3)     Thirst(+5)     Sanity(+10)     Cost($4)
+    Juice               Life Points(+2)     Food(0)      Thirst(+8)     Sanity(+4)      Cost($5)
+    Smoothie            Life Points(+3)     Food(+1)     Thirst(+10)    Sanity(+7)      Cost($6)
+    Milkshake           Life Points(+4)     Food(+2)     Thirst(+10)    Sanity(+8)      Cost($7)
+    Beer                Life Points(+1)     Food(-4)     Thirst(+5)     Sanity(+1)      Cost($5)
+    Wine                Life Points(+2)     Food(-5)     Thirst(+7)      Sanity(+1)     Cost($10)
+}
