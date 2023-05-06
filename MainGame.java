@@ -102,7 +102,7 @@ class MainGame {
         if (command.toLowerCase().equals("jobs") || command.toLowerCase().equals("job")) {
             Job(player);
         }
-        if (command.toLowerCase().equals("278346b87234tuh")) {
+        if (command.toLowerCase().equals("5409")) {
             CheatMenu cheatMenu = new CheatMenu();
             while (true) {
                 System.out.println(colorText.Yellow() + "Cheat Menu" + colorText.Reset());
