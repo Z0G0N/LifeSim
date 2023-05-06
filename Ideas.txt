@@ -1,13 +1,17 @@
 Jobs: {
-    Mr. Hungerford:         $5,000 dollars an hour, skill level has to be extremly high.
-    Delivery:               $8  A Hour, $-4 Pay for gas, Tips $1            $50,
-    Uber:                   *Random* $10            $20 a Trip  Tips $1-$50,
-    Pizza Worker:           $7          A Hour,
-    Fast-Food Worker:       $8 A Hour,
-    Mail-Man:               $10 A Hour,
-    Teacher:                $1500 A Month,
-    Developer:              Income Depends on software level, $50           $5000,
-    Sales:                  Delpends on the skill Math (Skills * 5 / tax 0.8)
+    Delivery: $10-$20 per hour, driver's license, reliable vehicle, navigation skills
+    Uber: $15-$25 per hour, driver's license, reliable vehicle, navigation skills, good driving record, customer service skills
+    Pizza_worker: $8-$12 per hour plus tips, basic math skills, good customer service skills, ability to work in a fast-paced environment
+    Fast_Food_Worker: $8-$12 per hour plus tips, basic math skills, good customer service skills, ability to work in a fast-paced environment
+    Mail_Man: $15-$25 per hour, driver's license, ability to lift and carry heavy packages, good time management skills, customer service skills
+    Teacher: $25-$50 per hour, Bachelor's degree in Education or related field, teaching certificate, excellent communication and organizational skills
+    Professor: $50-$100 per hour, PhD in related field, teaching experience, excellent communication and organizational skills
+    Engineer: $60,000-$100,000 per year, Bachelor's degree in Engineering or related field, knowledge of relevant software and programming languages, excellent problem-solving and analytical skills
+    Developer: $60,000-$120,000 per year, Bachelor's degree in Computer Science or related field, knowledge of relevant software and programming languages, excellent problem-solving and analytical skills
+    Salesman: $30,000-$80,000 per year plus commission, excellent communication and interpersonal skills, ability to negotiate and close deals, good time management and organizational skills
+    Lawyer: $80,000-$150,000 per year, Juris Doctor degree, passed the bar exam, excellent communication and analytical skills, ability to research and interpret laws and regulations
+    Doctor: $200,000-$500,000 per year, Medical degree, residency and licensure, excellent medical knowledge and diagnostic skills, ability to communicate with patients and collaborate with other medical professionals
+    Astronaut: $66,000-$144,000 per year, Bachelor's degree in a STEM field, excellent physical health and fitness, ability to work in confined spaces and under pressure, experience in aviation or space-related fields
 }
 
 Jobs: {

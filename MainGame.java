@@ -44,6 +44,10 @@ class MainGame {
             return false;
         }
     }
+
+    public static void Job(Player player) {
+        
+    }
     public static void main(String[] args) {
 
         // Colors
@@ -86,7 +90,18 @@ class MainGame {
                 System.out.println(" ");
                 System.out.println("You went through the tutorial! Great job!");
                 System.out.println(" ");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+        }
+        System.out.println(Clear + Reset);
+        System.out.print(cmd);
+        String command = scan.nextLine();
+        if (command.toLowerCase().equals("jobs") || command.toLowerCase().equals("job")) {
+            Job(player);
         }
     }
 }
