@@ -4,18 +4,9 @@ import javax.print.attribute.standard.JobImpressions;
 
 class MainGame {
     private static String cmd = "cmd: ";
-    private static String Clear = "\033[H\033[2J";
 
     public static Boolean tutorial() {
-        String Black = "\033[0;30m";   // BLACK
-        String Red = "\033[0;31m";     // RED
-        String Green = "\033[0;32m";   // GREEN
-        String Yellow = "\033[0;33m";  // YELLOW
-        String Blue = "\033[0;34m";    // BLUE
-        String Purple = "\033[0;35m";  // PURPLE
-        String Cyan = "\033[0;36m";    // CYAN
-        String White = "\033[0;37m";   // WHITE
-        String Reset = "\033[0m";  // Text Reset
+        ColorText colorText = new ColorText();
 
         Scanner scan = new Scanner(System.in);
 
@@ -25,15 +16,15 @@ class MainGame {
         System.out.println("You will also have to manage your skills.");
         System.out.println(" ");
         System.out.println("You can do this by going to the store and buying food, drinks, and beds.");
-        System.out.println("You can also go to the to train your "  + Purple + "Skills" + Reset + ".");
+        System.out.println("You can also go to the to train your "  + colorText.Purple() + "Skills" + colorText.Reset() + ".");
         System.out.println(" ");
-        System.out.println("You can also buy a "  + Cyan + "Car" + Reset + ", "  + Cyan + "House" + Reset + ", and"  + Cyan + " Softwear" + Reset + ".");
+        System.out.println("You can also buy a "  + colorText.Cyan() + "Car" + colorText.Reset() + ", "  + colorText.Cyan() + "House" + colorText.Reset() + ", and"  + colorText.Cyan() + " Softwear" + colorText.Reset() + ".");
         System.out.println(" ");
-        System.out.println("You can also have to go to the doctor if you get " + Red + "Very Sick" + Reset + " ");
+        System.out.println("You can also have to go to the doctor if you get " + colorText.Red() + "Very Sick" + colorText.Reset() + " ");
         System.out.println(" ");
-        System.out.println("You can also go to the " + Blue + "bank" + Reset + " to deposit and withdraw money.");
+        System.out.println("You can also go to the " + colorText.Blue() + "bank" + colorText.Reset() + " to deposit and withdraw money.");
         System.out.println(" ");
-        System.out.println("You will have something called " + Red + "sanity" + Reset + " if you are low on " + Red + "sanity" + Reset + " your life will become harder.");
+        System.out.println("You will have something called " + colorText.Red() + "sanity" + colorText.Reset() + " if you are low on " + colorText.Red() + "sanity" + colorText.Reset() + " your life will become harder.");
         System.out.println(" ");
         System.out.println("You will use the 'cmd:' for the commands. For example, if you want to go to the store, type 'store'.");
         System.out.println("Say cmd:'back' to go back to the main menu.");
@@ -50,27 +41,16 @@ class MainGame {
     public static void Job(Player player) {
         Jobs jobs = new Jobs();
         Scanner scan = new Scanner(System.in);
-        String Black = "\033[0;30m";   // BLACK
-        String Red = "\033[0;31m";     // RED
-        String Green = "\033[0;32m";   // GREEN
-        String Yellow = "\033[0;33m";  // YELLOW
-        String Blue = "\033[0;34m";    // BLUE
-        String Purple = "\033[0;35m";  // PURPLE
-        String Cyan = "\033[0;36m";    // CYAN
-        String White = "\033[0;37m";   // WHITE
-        String Reset = "\033[0m";  // Text Reset
+        ColorText colorText = new ColorText();
 
         System.out.println(" ");
         System.out.println("You can choose from these jobs:");
         System.out.println(" ");
-        System.out.println("1. " + Green + "Programmer" + Reset + " - " + Yellow + "Salary: $100" + Reset + " - " + Blue + "Skills: Programming" + Reset + " - " + Purple + "Level: 1" + Reset);
         System.out.println(" ");
-        System.out.print(cmd + Reset);
+        System.out.print(cmd + colorText.Reset());
         String command = scan.nextLine();
         if (command.toLowerCase().equals("delivery")) {
-            jobs.Delivery(player);
-            //test
-            System.out.println(player.skills.getHungerfordSkill());
+            System.out.println(jobs.Delivery(player));
         } else {
             System.out.println(" ");
             System.out.println("That is not a job!");
@@ -79,32 +59,21 @@ class MainGame {
     }
 
     public static void main(String[] args) {
-
-        // Colors
-        String Black = "\033[0;30m";   // BLACK
-        String Red = "\033[0;31m";     // RED
-        String Green = "\033[0;32m";   // GREEN
-        String Yellow = "\033[0;33m";  // YELLOW
-        String Blue = "\033[0;34m";    // BLUE
-        String Purple = "\033[0;35m";  // PURPLE
-        String Cyan = "\033[0;36m";    // CYAN
-        String White = "\033[0;37m";   // WHITE
-        String Reset = "\033[0m";  // Text Reset
-
+        ColorText colorText = new ColorText();
         Scanner scan = new Scanner(System.in);
 
         //Start Game
-        System.out.print(Clear);
+        System.out.print(colorText.Clear());
 
         System.out.println("Welcome to Life Sim!");
-        System.out.print("Let's start with your name: " + Green);
+        System.out.print("Let's start with your name: " + colorText.Green());
         String name = scan.nextLine();
-        System.out.print(Clear + Reset);
+        System.out.print(colorText.Clear() + colorText.Reset());
 
         // Create Player
         Player player = new Player(name);
 
-        System.out.println("Welcome " + Green + player.getName() + Reset +"!");
+        System.out.println("Welcome " + colorText.Reset() + player.getName() + colorText.Reset() +"!");
         System.out.println(" ");
         System.out.println("If you need help at any time, type 'help'.");
         System.out.println("To see your stats, type 'stats'.");
@@ -127,7 +96,7 @@ class MainGame {
                 }
             }
         }
-        System.out.println(Clear + Reset);
+        System.out.println(colorText.Clear() + colorText.Reset());
         System.out.print(cmd);
         String command = scan.nextLine();
         if (command.toLowerCase().equals("jobs") || command.toLowerCase().equals("job")) {

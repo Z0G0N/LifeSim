@@ -12,8 +12,8 @@ class Skills {
     private int Time_management_skills;
     private int Hungerford_Skill;
 
-    public void setSocialSkills(int Social_skills) {
-        this.Social_skills = Social_skills;
+    public void setSocialSkills(int i) {
+        this.Social_skills = i;
     }
 
     public int setTechnicalSkills(int Technical_skills) {

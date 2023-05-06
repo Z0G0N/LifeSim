@@ -1,12 +1,66 @@
+import java.beans.Statement;
+import java.util.Random;
+
 class Jobs {
 
+    public int Random(int range){
+        if (range <= 0) {
+            range = 0;
+        }
+        Random random = new Random();
+        int randomNumber = random.nextInt(range); // Generates a random number between 0 and 9
+        return randomNumber;
+    }
 
+    public String Delivery(Player player) {
+        String senerio;
+        String Statement;
 
-    public int Delivery(Player player) {
-        //random money system
-        //Delivery: $10-$20 per hour, driver's license, reliable vehicle, navigation skills
-        player.skills.setHungerfordSkill(100);
-        return 1;
+        String[] scenarios = {
+            "You got lost and had trouble finding the delivery address.",
+            "The customer was not home and you had to wait for them to come back.",
+            "The food was spilled during transportation and you had to go back to the restaurant to get a new order.",
+            "You accidentally delivered the wrong order to the customer and had to go back to correct the mistake.",
+            "The customer gave you a generous tip for your excellent service.",
+            "You encountered heavy traffic and the delivery took longer than expected.",
+            "The customer complained that the food was cold and demanded a refund.",
+            "You got a flat tire on the way to the delivery and had to change it.",
+            "The customer was very friendly and made your delivery experience enjoyable.",
+            "You got a parking ticket while making a delivery.",
+            "The customer gave you a bad review online for no apparent reason.",
+            "You had a small accident while making a delivery but nobody was hurt.",
+            "The customer's dog got loose and chased after you while you were delivering the food.",
+            "You had to deal with a difficult restaurant staff who were slow to prepare the food for delivery.",
+            "The customer was very happy with your service and left you a glowing review online."
+        };
+
+        //----Check if player has a drivers license----//
+        int rand = 0;
+        if (player.skills.getSocialSkills() == 0 && player.getDriversLicence()) {
+            int randomLuck = Random(100);
+            if (randomLuck <= 50) {
+                //---Bad Luck---//
+                senerio = scenarios[Random(15)];
+                rand = Random(10);
+                player.addCash(rand);
+                player.subtractHunger(-2);
+                player.subtractThirst(-2);
+                player.subtractSanity(-4);
+                Statement = "Aww, you only made $" + rand + " delivering food. " + senerio;
+            } else {    
+                //---Good Luck---//
+                rand = Random(20);
+                player.addCash(rand);
+                player.subtractHunger(-2);
+                player.subtractThirst(-2);
+                player.subtractSanity(-1);
+                Statement = "You made $" + rand + " delivering food!";
+            }
+        } else {
+            Statement = "You don't have a drivers license!";
+        }
+
+        return Statement;
     }
 
     public static int Uber(Player player) {

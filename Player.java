@@ -16,6 +16,7 @@ public class Player {
     private String bedType;
     private String house;
     private String BrainStatus;
+    private Boolean DriversLicence;
     Skills skills;
 
     public Player(String name) {
@@ -35,6 +36,7 @@ public class Player {
         this.bedType = "No";
         this.house = "No";
         this.BrainStatus = "Smooth brain";
+        this.DriversLicence = false;
         this.skills = new Skills();
         skills.setSocialSkills(0);
         skills.setTechnicalSkills(0);
@@ -115,6 +117,10 @@ public class Player {
         return this.Hardwear;
     }
 
+    public Boolean getDriversLicence() {
+        return this.DriversLicence;
+    }
+
     // ------ Setters ------
 
     public void setLevel(int level) {
@@ -157,7 +163,35 @@ public class Player {
         this.Hardwear = Hardwear;
     }
 
-    // ------ Methods ------
+    public void setSoftwear(String Softwear) {
+        this.Softwear = Softwear;
+    }
+
+    public void setHealth(String health) {
+        this.health = health;
+    }
+
+    public void setSleep(String sleep) {
+        this.sleep = sleep;
+    }
+
+    public void setBedType(String bedType) {
+        this.bedType = bedType;
+    }
+
+    public void setHouse(String house) {
+        this.house = house;
+    }
+
+    public void setBrainStatus(String BrainStatus) {
+        this.BrainStatus = BrainStatus;
+    }
+
+    public void setDriversLicence(Boolean DriversLicence) {
+        this.DriversLicence = DriversLicence;
+    }
+
+    // ------ Add ------
 
     public void addExp(int exp) {
         this.exp += exp;
@@ -174,6 +208,54 @@ public class Player {
     public void addCar(String car) {
         this.car = car;
     }
+
+    public void addLifePoints(int lifePoints) {
+        this.lifePoints += lifePoints;
+    }
+
+    public void addThirst(int Thirst) {
+        this.Thirst += Thirst;
+    }
+
+    public void addHunger(int Hunger) {
+        this.Hunger += Hunger;
+    }
+
+    public void addSanity(int Sanity) {
+        this.Sanity += Sanity;
+    }
+
+    public void addHardwear(String Hardwear) {
+        this.Hardwear = Hardwear;
+    }
+
+    public void addSoftwear(String Softwear) {
+        this.Softwear = Softwear;
+    }
+
+    // ------ Subtract ------
+
+    public void subtractCash(int cash) {
+        this.cash -= cash;
+    }
+
+    public void subtractLifePoints(int lifePoints) {
+        this.lifePoints -= lifePoints;
+    }
+
+    public void subtractThirst(int Thirst) {
+        this.Thirst -= Thirst;
+    }
+
+    public void subtractHunger(int Hunger) {
+        this.Hunger -= Hunger;
+    }
+
+    public void subtractSanity(int Sanity) {
+        this.Sanity -= Sanity;
+    }
+
+    // ------ Other ------
 
     public String toString() {
         return "Player: " + this.name + "\nLevel: " + this.level + "\nExp: " + this.exp + "\nCash: " + this.cash + "\nCar: " + this.car;
