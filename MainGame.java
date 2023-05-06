@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.print.attribute.standard.JobImpressions;
+
 class MainGame {
     private static String cmd = "cmd: ";
     private static String Clear = "\033[H\033[2J";
@@ -46,8 +48,36 @@ class MainGame {
     }
 
     public static void Job(Player player) {
-        
+        Jobs jobs = new Jobs();
+        Scanner scan = new Scanner(System.in);
+        String Black = "\033[0;30m";   // BLACK
+        String Red = "\033[0;31m";     // RED
+        String Green = "\033[0;32m";   // GREEN
+        String Yellow = "\033[0;33m";  // YELLOW
+        String Blue = "\033[0;34m";    // BLUE
+        String Purple = "\033[0;35m";  // PURPLE
+        String Cyan = "\033[0;36m";    // CYAN
+        String White = "\033[0;37m";   // WHITE
+        String Reset = "\033[0m";  // Text Reset
+
+        System.out.println(" ");
+        System.out.println("You can choose from these jobs:");
+        System.out.println(" ");
+        System.out.println("1. " + Green + "Programmer" + Reset + " - " + Yellow + "Salary: $100" + Reset + " - " + Blue + "Skills: Programming" + Reset + " - " + Purple + "Level: 1" + Reset);
+        System.out.println(" ");
+        System.out.print(cmd + Reset);
+        String command = scan.nextLine();
+        if (command.toLowerCase().equals("delivery")) {
+            jobs.Delivery(player);
+            //test
+            System.out.println(player.skills.getHungerfordSkill());
+        } else {
+            System.out.println(" ");
+            System.out.println("That is not a job!");
+            System.out.println(" ");
+        }
     }
+
     public static void main(String[] args) {
 
         // Colors
