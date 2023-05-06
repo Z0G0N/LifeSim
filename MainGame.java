@@ -237,14 +237,23 @@ class MainGame {
                     int amount = scan.nextInt();
                     CheatMenu.setCash(player, amount);
                 }
-
                 if (cheatCommand.toLowerCase().equals("player")) {
                     System.out.print(colorText.Clear());
                     System.out.print(colorText.Blue() + player + colorText.Reset());
                     System.out.println(" ");
                 }
+                if (cheatCommand.toLowerCase().equals("set - license")) {
+                    System.out.print(colorText.Clear());
+                    System.out.print(cmd);
+                    Boolean license = scan.nextBoolean();
+                    player.setDriversLicence(license);
+                    System.out.println(colorText.Yellow() + "License: " + player.getDriversLicence() + colorText.Reset());
+                }
                 if (cheatCommand.toLowerCase().equals("clear")) {
                     System.out.print(colorText.Clear());
+                }
+                if (cheatCommand.toLowerCase().equals("back")) {
+                    break;
                 }
             }
         }
