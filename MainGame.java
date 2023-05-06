@@ -102,5 +102,151 @@ class MainGame {
         if (command.toLowerCase().equals("jobs") || command.toLowerCase().equals("job")) {
             Job(player);
         }
+        if (command.toLowerCase().equals("278346b87234tuh")) {
+            CheatMenu cheatMenu = new CheatMenu();
+            while (true) {
+                System.out.println(colorText.Yellow() + "Cheat Menu" + colorText.Reset());
+                System.out.println(
+                    colorText.Yellow() + 
+                """
+                    Add / Subtract / Set - lifePoints
+                    Add / Subtract / Set - Thirst
+                    Add / Subtract / Set - Hunger
+                    Add / Subtract / Set - Sanity
+                    Add / Subtract / Set - level
+                    Add / Subtract / Set - exp
+                    Add / Subtract / Set - cash
+                    Add / Subtract / Set - name
+                    Add / Subtract / Set - car
+                    Add / Subtract / Set - Hardwear
+                    Add / Subtract / Set - Softwear
+                    Add / Subtract / Set - health - Sickness
+                    Add / Subtract / Set - sleep
+                    Add / Subtract / Set - bedType
+                    Add / Subtract / Set - house
+                    Add / Subtract / Set - BrainStatus
+                    Add / Subtract / Set - DriversLicence
+                """
+                + colorText.Reset()
+                );
+                System.out.println(" ");
+                System.out.print(colorText.Yellow()+"Cheat: "+cmd+ colorText.Reset());
+                String cheatCommand = scan.nextLine();
+                if (cheatCommand.toLowerCase().equals("add - lifepoints")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addLifePoints(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - lifepoints")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractLifePoints(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - lifepoints")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setLifePoints(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("add - thirst")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addThirst(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - thirst")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractThirst(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - thirst")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setThirst(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("add - hunger")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addHunger(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - hunger")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractHunger(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - hunger")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setHunger(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("add - sanity")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addSanity(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - sanity")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractSanity(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - sanity")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setSanity(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("add - level")) {
+                    System.out.print(colorText.Yellow()+"Amount: "+ colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addLevel(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - level")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractLevel(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - level")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setLevel(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("add - exp")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addExp(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - exp")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractExp(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - exp")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setExp(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("add - cash")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.addCash(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("subtract - cash")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.subtractCash(player, amount);
+                }
+                if (cheatCommand.toLowerCase().equals("set - cash")) {
+                    System.out.print(colorText.Yellow()+"Amount: " + colorText.Reset());
+                    int amount = scan.nextInt();
+                    CheatMenu.setCash(player, amount);
+                }
+
+                if (cheatCommand.toLowerCase().equals("player")) {
+                    System.out.print(colorText.Clear());
+                    System.out.print(colorText.Blue() + player + colorText.Reset());
+                    System.out.println(" ");
+                }
+                if (cheatCommand.toLowerCase().equals("clear")) {
+                    System.out.print(colorText.Clear());
+                }
+            }
+        }
     }
 }
