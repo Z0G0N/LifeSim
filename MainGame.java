@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.print.attribute.standard.JobImpressions;
-
 class MainGame {
     private static String cmd = "cmd: ";
 
@@ -37,7 +35,7 @@ class MainGame {
             return false;
         }
     }
-
+    // ---- Jobs ---- //
     public static void Job(Player player) {
         Jobs jobs = new Jobs();
         Scanner scan = new Scanner(System.in);
@@ -45,13 +43,44 @@ class MainGame {
 
         System.out.println(" ");
         System.out.println("You can choose from these jobs:");
+        // Print the list of jobs
         System.out.println(" ");
         System.out.println(" ");
         System.out.print(cmd + colorText.Reset());
         String command = scan.nextLine();
         if (command.toLowerCase().equals("delivery")) {
-            System.out.println(jobs.Delivery(player));
-        } else {
+            jobs.Delivery(player);
+        }
+
+        if (command.toLowerCase().equals("uber")) {
+            System.out.println(jobs.Uber(player));
+        }
+
+        if (command.toLowerCase().equals("pizza_worker") || command.toLowerCase().equals("pw")) {
+            System.out.println(jobs.Pizza_worker(player));
+        }
+
+        if (command.toLowerCase().equals("fast_food_worker")|| command.toLowerCase().equals("ffw")) {
+            System.out.println(jobs.Fast_Food_Worker(player));
+        }
+
+        if (command.toLowerCase().equals("mail_man")|| command.toLowerCase().equals("mm")) {
+            System.out.println(jobs.Mail_Man(player));
+        }
+
+        if (command.toLowerCase().equals("teacher")) {
+            System.out.println(jobs.Teacher(player));
+        }
+
+        if (command.toLowerCase().equals("developer")) {
+            System.out.println(jobs.Developer(player));
+        } 
+
+        if (command.toLowerCase().equals("salesman")) {
+            System.out.println(jobs.Salesman(player));
+        }
+
+         else {
             System.out.println(" ");
             System.out.println("That is not a job!");
             System.out.println(" ");
