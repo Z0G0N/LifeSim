@@ -136,7 +136,6 @@ class MainGame {
         }
         if (command.toLowerCase().equals("5409")) {
             while (true) {
-                ColorText colorText = new ColorText();
                 CheatMenu cheatMenu = new CheatMenu();
                 System.out.println(colorText.Yellow() + "Cheat Menu" + colorText.Reset());
                 System.out.println(
