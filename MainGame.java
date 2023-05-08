@@ -3,6 +3,7 @@ import java.util.Scanner;
 class MainGame {
     private static String cmd = "cmd: ";
 
+    // --- Tutorial --- //
     public static Boolean tutorial() {
         ColorText colorText = new ColorText();
 
@@ -35,7 +36,7 @@ class MainGame {
                 "You will use the 'cmd:' for the commands. For example, if you want to go to the store, type 'store'.");
         System.out.println("Say cmd:'back' to go back to the main menu.");
         System.out.println(" ");
-        System.out.print(cmd);
+        System.out.print(colorText.Blue() + cmd + colorText.Reset());
         String command = scan.nextLine();
         if (command.equals("back")) {
             return true;
@@ -50,59 +51,54 @@ class MainGame {
         Scanner scan = new Scanner(System.in);
         ColorText colorText = new ColorText();
         System.out.println(colorText.Clear());
-        System.out.println(" ");
-        System.out.println("You can choose from these jobs:");
-        System.out.println(" ");
-        System.out.println("[ -------- JOBS -------- ]");
-        System.out.println("[     Delivery           ]");
-        System.out.println("[     Uber               ]");
-        System.out.println("[     Pizza Worker       ]");
-        System.out.println("[     Fast Food Worker   ]");
-        System.out.println("[     Mail Man           ]");
-        System.out.println("[     Teacher            ]");
-        System.out.println("[     Developer          ]");
-        System.out.println("[     Salesman           ]");
-        System.out.println("[ ---------------------- ]");
+        System.out.println(colorText.Cyan() + "[ -------- JOBS -------- ]");
+        System.out.println("[       Delivery         ]");
+        System.out.println("[       Uber             ]");
+        System.out.println("[       Pizza Worker     ]");
+        System.out.println("[       Fast Food Worker ]");
+        System.out.println("[       Mail Man         ]");
+        System.out.println("[       Teacher          ]");
+        System.out.println("[       Developer        ]");
+        System.out.println("[       Salesman         ]");
+        System.out.println("[ ---------------------- ]" + colorText.Reset());
         System.out.println(" ");
         System.out.println(" ");
-        System.out.print(cmd + colorText.Reset());
+        System.out.print(colorText.Blue() + cmd + colorText.Reset());
         String command = scan.nextLine();
-        if (command.toLowerCase().equals("delivery")) {
+        if (command.toLowerCase().equals("delivery") || command.toLowerCase().equals("d") || command.toLowerCase().equals("1")) {
             jobs.Delivery(player);
-
         }
-
-        else if (command.toLowerCase().equals("uber")) {
+        else if (command.toLowerCase().equals("uber") || command.toLowerCase().equals("u") || command.toLowerCase().equals("2")) {
             jobs.Uber(player);
         }
 
-        else if (command.toLowerCase().equals("pizza_worker") || command.toLowerCase().equals("pw")) {
+        else if (command.toLowerCase().equals("pizza_worker") || command.toLowerCase().equals("pw") || command.toLowerCase().equals("3")) {
             System.out.println(jobs.Pizza_worker(player));
         }
 
-        else if (command.toLowerCase().equals("fast_food_worker") || command.toLowerCase().equals("ffw")) {
+        else if (command.toLowerCase().equals("fast_food_worker") || command.toLowerCase().equals("ffw") || command.toLowerCase().equals("4")) {
             System.out.println(jobs.Fast_Food_Worker(player));
         }
 
-        else if (command.toLowerCase().equals("mail_man") || command.toLowerCase().equals("mm")) {
+        else if (command.toLowerCase().equals("mail_man") || command.toLowerCase().equals("mm") || command.toLowerCase().equals("5")) {
             System.out.println(jobs.Mail_Man(player));
         }
 
-        else if (command.toLowerCase().equals("teacher")) {
+        else if (command.toLowerCase().equals("teacher") || command.toLowerCase().equals("t") || command.toLowerCase().equals("6")) {
             System.out.println(jobs.Teacher(player));
         }
 
-        else if (command.toLowerCase().equals("developer")) {
+        else if (command.toLowerCase().equals("developer") || command.toLowerCase().equals("dev") || command.toLowerCase().equals("7")) {
             System.out.println(jobs.Developer(player));
         }
 
-        else if (command.toLowerCase().equals("salesman")) {
+        else if (command.toLowerCase().equals("salesman") || command.toLowerCase().equals("s") || command.toLowerCase().equals("8")) {
             System.out.println(jobs.Salesman(player));
         }
 
         else {
             System.out.println(" ");
-            System.out.println("That is not a job!");
+            System.out.println(colorText.Red() + "That is not a job!" + colorText.Reset());
             System.out.println(" ");
         }
         try {
@@ -113,10 +109,11 @@ class MainGame {
         Game(player);
     }
 
+    // ---- Game ---- //
     public static void Game(Player player) {
         ColorText colorText = new ColorText();
         Scanner scan = new Scanner(System.in);
-        System.out.print(cmd);
+        System.out.print(colorText.Blue() + cmd + colorText.Reset());
         String command = scan.nextLine();
 
         // [ ---- Jobs ----]
@@ -292,7 +289,7 @@ class MainGame {
                 }
                 if (cheatCommand.toLowerCase().equals("set - license")) {
                     System.out.print(colorText.Clear());
-                    System.out.print(cmd);
+                    System.out.print(colorText.Blue() + cmd + colorText.Reset());
                     Boolean license = scan.nextBoolean();
                     player.setDriversLicence(license);
                     System.out.println(
@@ -309,6 +306,7 @@ class MainGame {
         }
     }
 
+    // ---- Main ---- //
     public static void main(String[] args) {
         ColorText colorText = new ColorText();
         Scanner scan = new Scanner(System.in);
@@ -316,7 +314,8 @@ class MainGame {
         // Start Game
         System.out.print(colorText.Clear());
 
-        System.out.println("Welcome to Life Sim!");
+        // Welcome Message
+        System.out.println("Welcome to " + colorText.Green() + "Life Sim!" + colorText.Reset());
         System.out.print("Let's start with your name: " + colorText.Green());
         String name = scan.nextLine();
         System.out.print(colorText.Clear() + colorText.Reset());
@@ -332,7 +331,8 @@ class MainGame {
         System.out.println(" ");
         System.out.println("Lets get started!");
         System.out.println(" ");
-        System.out.println("Do you want a quick tutorial? (y/n)");
+        System.out.println("Do you want a quick tutorial?" + colorText.Yellow() + " (y/n)" + colorText.Reset());
+        System.out.print(colorText.Blue() + cmd + colorText.Reset());
         String tutorial = scan.nextLine();
         if (tutorial.equals("y")) {
             Boolean TutDone = tutorial();
