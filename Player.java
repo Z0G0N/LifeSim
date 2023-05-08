@@ -258,7 +258,7 @@ public class Player {
     // ------ Other ------
 
     public String toString() {
-        return "Player: " + this.name + "\nLevel: " + this.level + "\nExp: " + this.exp + "\nCash: " + this.cash + "\nCar: " + this.car;
+        return "Player: " + this.name + "\nLevel: " + this.level + "\nExp: " + this.exp + "\nCash: " + this.cash + "\nCar: " + this.car + "\nLife Points: " + this.lifePoints + "\nThirst: " + this.Thirst + "\nHunger: " + this.Hunger + "\nSanity: " + this.Sanity + "\nHardwear: " + this.Hardwear + "\nSoftwear: " + this.Softwear + "\nHealth: " + this.health + "\nSleep: " + this.sleep + "\nBed Type: " + this.bedType + "\nHouse: " + this.house + "\nBrain Status: " + this.BrainStatus + "\nDrivers Licence: " + this.DriversLicence;
     }
 
 }

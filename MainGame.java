@@ -49,10 +49,20 @@ class MainGame {
         Jobs jobs = new Jobs();
         Scanner scan = new Scanner(System.in);
         ColorText colorText = new ColorText();
-
+        System.out.println(colorText.Clear());
         System.out.println(" ");
         System.out.println("You can choose from these jobs:");
-        // Print the list of jobs
+        System.out.println(" ");
+        System.out.println("[ -------- JOBS -------- ]");
+        System.out.println("[     Delivery           ]");
+        System.out.println("[     Uber               ]");
+        System.out.println("[     Pizza Worker       ]");
+        System.out.println("[     Fast Food Worker   ]");
+        System.out.println("[     Mail Man           ]");
+        System.out.println("[     Teacher            ]");
+        System.out.println("[     Developer          ]");
+        System.out.println("[     Salesman           ]");
+        System.out.println("[ ---------------------- ]");
         System.out.println(" ");
         System.out.println(" ");
         System.out.print(cmd + colorText.Reset());
@@ -95,6 +105,12 @@ class MainGame {
             System.out.println("That is not a job!");
             System.out.println(" ");
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Game(player);
     }
 
     public static void Game(Player player) {
@@ -126,39 +142,40 @@ class MainGame {
             System.out.println(colorText.Clear());
             System.out.println(player);
             System.out.println(" ");
-            System.out.println(cmd);
+            Game(player);
         }
 
         // [ ---- Tutorial ----]
 
         else if (command.toLowerCase().equals("tutorial")) {
             tutorial();
+            Game(player);
         }
-        if (command.toLowerCase().equals("5409")) {
+        else if (command.toLowerCase().equals("5409")) {
             while (true) {
                 CheatMenu cheatMenu = new CheatMenu();
                 System.out.println(colorText.Yellow() + "Cheat Menu" + colorText.Reset());
                 System.out.println(
                         colorText.Yellow() +
                                 """
-                                            Add / Subtract / Set - lifePoints
-                                            Add / Subtract / Set - Thirst
-                                            Add / Subtract / Set - Hunger
-                                            Add / Subtract / Set - Sanity
-                                            Add / Subtract / Set - level
-                                            Add / Subtract / Set - exp
-                                            Add / Subtract / Set - cash
-                                            Add / Subtract / Set - name
-                                            Add / Subtract / Set - car
-                                            Add / Subtract / Set - Hardwear
-                                            Add / Subtract / Set - Softwear
-                                            Add / Subtract / Set - health - Sickness
-                                            Add / Subtract / Set - sleep
-                                            Add / Subtract / Set - bedType
-                                            Add / Subtract / Set - house
-                                            Add / Subtract / Set - BrainStatus
-                                            Add / Subtract / Set - DriversLicence
-                                        """
+                                    Add / Subtract / Set - lifePoints
+                                    Add / Subtract / Set - Thirst
+                                    Add / Subtract / Set - Hunger
+                                    Add / Subtract / Set - Sanity
+                                    Add / Subtract / Set - level
+                                    Add / Subtract / Set - exp
+                                    Add / Subtract / Set - cash
+                                    Add / Subtract / Set - name
+                                    Add / Subtract / Set - car
+                                    Add / Subtract / Set - Hardwear
+                                    Add / Subtract / Set - Softwear
+                                    Add / Subtract / Set - health - Sickness
+                                    Add / Subtract / Set - sleep
+                                    Add / Subtract / Set - bedType
+                                    Add / Subtract / Set - house
+                                    Add / Subtract / Set - BrainStatus
+                                    Add / Subtract / Set - DriversLicence
+                                """
                                 + colorText.Reset());
                 System.out.println(" ");
                 System.out.print(colorText.Yellow() + "Cheat: " + cmd + colorText.Reset());
@@ -285,6 +302,7 @@ class MainGame {
                     System.out.print(colorText.Clear());
                 }
                 if (cheatCommand.toLowerCase().equals("back")) {
+                    Game(player);
                     break;
                 }
             }
