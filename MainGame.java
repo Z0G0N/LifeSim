@@ -73,7 +73,7 @@ class MainGame {
         }
 
         else if (command.toLowerCase().equals("pizza_worker") || command.toLowerCase().equals("pw") || command.toLowerCase().equals("3")) {
-            System.out.println(jobs.Pizza_worker(player));
+            jobs.Pizza_worker(player);
         }
 
         else if (command.toLowerCase().equals("fast_food_worker") || command.toLowerCase().equals("ffw") || command.toLowerCase().equals("4")) {

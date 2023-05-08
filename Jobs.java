@@ -99,10 +99,31 @@ class Jobs {
         }
     }
 
-    public int Pizza_worker(Player player) {
+    public void Pizza_worker(Player player) {
         //random money system
         //Pizza_worker: $8-$12 per hour plus tips, basic math skills, good customer service skills, ability to work in a fast-paced environment
-        return 1;
+        int randomLuck = Random(100);
+        Boolean Day;
+        if (randomLuck <= 50) {
+            Day = false;
+        } else {
+            Day = true;
+        }
+
+        if (Day) {
+            // --- Good Day ---
+            int randomCash = Random(12);
+            player.addCash(randomCash);
+            player.addSanity(12);
+            System.out.println("You earned a total of $" + randomCash + "and gained 12 sanity points.");
+
+        } else {
+            // --- Bad Day ---
+            int randomCash = Random(8);
+            player.addCash(randomCash);
+            player.subtractSanity(-1);
+            System.out.println("You earned $" + randomCash + "and gained -2 sanity points.");
+        }
     }
 
     public int Fast_Food_Worker(Player player) {
