@@ -35,6 +35,9 @@ public class Jobs {
                 if (Day) {
                     // --- Good Day ---
                     int randomCash = Random(20);
+                    if (randomCash <= 0) {
+                        randomCash = 15;
+                    }
                     player.addCash(randomCash);
                     player.addSanity(12);
                     System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and gained 12 sanity points.");
@@ -42,6 +45,9 @@ public class Jobs {
                 } else {
                     // --- Bad Day ---
                     int randomCash = Random(10);
+                    if (randomCash <= 0) {
+                        randomCash = 5;
+                    }
                     player.addCash(randomCash);
                     player.subtractSanity(-2);
                     System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and lost 2 sanity points.");
@@ -80,6 +86,9 @@ public class Jobs {
                 if (Day) {
                     // --- Good Day ---
                     int randomCash = Random(25);
+                    if (randomCash <= 0) {
+                        randomCash = 20;
+                    }
                     player.addCash(randomCash);
                     if (player.getSanity() >= 100) {
                         player.setSanity(100);
@@ -94,6 +103,9 @@ public class Jobs {
                 } else {
                     // --- Bad Day ---
                     int randomCash = Random(15);
+                    if (randomCash <= 0) {
+                        randomCash = 15;
+                    }
                     player.addCash(randomCash);
                     if (player.getSanity() <= 0) {
                         player.setSanity(0);
@@ -138,6 +150,9 @@ public class Jobs {
             if (Day) {  
                 // --- Good Day ---
                 int randomCash = Random(12);
+                if (randomCash <= 0) {
+                    randomCash = 8;
+                }
                 player.addCash(randomCash);
                 if (player.getSanity() >= 100) {
                     player.setSanity(100);
@@ -152,6 +167,9 @@ public class Jobs {
             } else {
                 // --- Bad Day ---
                 int randomCash = Random(8);
+                if (randomCash <= 0) {
+                    randomCash = 4;
+                }
                 player.addCash(randomCash);
                 if (player.getSanity() <= 0) {
                     player.setSanity(0);
@@ -192,6 +210,9 @@ public class Jobs {
             if (Day) {
                 // --- Good Day ---
                 int randomCash = Random(12);
+                if (randomCash <= 0) {
+                    randomCash = 6;
+                }
                 int tips = Random(5);
                 player.addCash(randomCash + tips);
                 if (player.getSanity() >= 100) {
@@ -207,6 +228,9 @@ public class Jobs {
             } else {
                 // --- Bad Day ---
                 int randomCash = Random(8);
+                if (randomCash <= 0) {
+                    randomCash = 4;
+                }
                 player.addCash(randomCash);
                 if (player.getSanity() <= 0) {
                     player.setSanity(0);
