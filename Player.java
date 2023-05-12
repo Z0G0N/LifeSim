@@ -21,7 +21,7 @@ public class Player {
     Skills skills;
 
     public Player(String name) {
-        this.level = 1;
+        this.level = 0;
         this.exp = 0;
         this.cash = 50;
         this.name = name;
@@ -51,6 +51,17 @@ public class Player {
         skills.setLanguageSkills(0);
         skills.setTimeManagementSkills(0);
         skills.setHungerfordSkill(0);
+    }
+
+    // ------ exp ------
+
+    public void addExp() {
+        if (this.exp >= this.level * 15) {
+            addLevel(1);;
+            this.exp = 0;
+        } else {
+            this.exp += 15;
+        }
     }
 
     // ------ Getters ------

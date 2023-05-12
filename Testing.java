@@ -11,6 +11,7 @@ public class Testing {
         menu += ("\n 4. cars");
         menu += ("\n 5. player");
         menu += ("\n 6. scenario");
+        menu += ("\n 7. sickness");
         return (colorText.Red() + menu + colorText.Reset());
     }
 
@@ -21,6 +22,7 @@ public class Testing {
         if (testCMD.toLowerCase().equals("c") || testCMD.toLowerCase().equals("cars") || testCMD.toLowerCase().equals("4")) { cars(player); }
         if (testCMD.toLowerCase().equals("p") || testCMD.toLowerCase().equals("player") || testCMD.toLowerCase().equals("5")) { player(player); }
         if (testCMD.toLowerCase().equals("sc") || testCMD.toLowerCase().equals("scenario") || testCMD.toLowerCase().equals("6")) { scenario(player); }
+        if (testCMD.toLowerCase().equals("si") || testCMD.toLowerCase().equals("sickness") || testCMD.toLowerCase().equals("7")) { sickness(player); }
     }
     // ----- Testing Functions ---- //
     public void stats(Player player) {
@@ -51,6 +53,10 @@ public class Testing {
 
     public void cars(Player player) {
         
+    }
+
+    public void sickness(Player player) {
+        player.setHealth(Player.HealthList[3]);
     }
 
     public void player(Player player) {

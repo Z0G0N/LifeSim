@@ -31,6 +31,14 @@ public class Store {
         System.out.println("furnature stuff");
     }
 
+    public static void cars() {
+        System.out.println("car stuff");
+    }
+
+    public static void hosues() {
+        System.out.println("hosues stuff");
+    }
+
     // -- other -- //
 
 }

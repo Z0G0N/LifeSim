@@ -38,13 +38,14 @@ public class Jobs {
                     player.addCash(randomCash);
                     player.addSanity(12);
                     System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and gained 12 sanity points.");
-
+                    player.addExp();
                 } else {
                     // --- Bad Day ---
                     int randomCash = Random(10);
                     player.addCash(randomCash);
                     player.subtractSanity(-2);
                     System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and lost 2 sanity points.");
+                    player.addExp();
                 }
             } else {
                 System.out.println("You need a drivers licence to be a delivery driver.");
@@ -89,7 +90,7 @@ public class Jobs {
                     player.subtractLifePoints(5);
                     player.subtractHunger(5);
                     System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
-
+                    player.addExp();
                 } else {
                     // --- Bad Day ---
                     int randomCash = Random(15);
@@ -103,6 +104,7 @@ public class Jobs {
                     player.subtractLifePoints(5);
                     player.subtractHunger(5);
                     System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+                    player.addExp();
                 }
             } else {
                 System.out.println("You need a drivers licence to be an Uber driver.");
@@ -146,7 +148,7 @@ public class Jobs {
                 player.subtractLifePoints(5);
                 player.subtractHunger(5);
                 System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
-
+                player.addExp();
             } else {
                 // --- Bad Day ---
                 int randomCash = Random(8);
@@ -160,6 +162,7 @@ public class Jobs {
                 player.subtractLifePoints(5);
                 player.subtractHunger(5);
                 System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+                player.addExp();
             }
         } else {
             System.out.println(colorText.Red() + "You are too sick to work." + colorText.Reset());
@@ -200,7 +203,7 @@ public class Jobs {
                 player.subtractLifePoints(5);
                 player.subtractHunger(5);
                 System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + " and $" + tips + " in tips");
-
+                player.addExp();
             } else {
                 // --- Bad Day ---
                 int randomCash = Random(8);
@@ -214,6 +217,7 @@ public class Jobs {
                 player.subtractLifePoints(5);
                 player.subtractHunger(5);
                 System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+                player.addExp();
             }
         } else {
             System.out.println(colorText.Red() + "You are too sick to work." + colorText.Reset());

@@ -299,5 +299,5 @@ Drinks {
     Smoothie            Life Points(+3)     Food(+1)     Thirst(+10)    Sanity(+7)      Cost($6)
     Milkshake           Life Points(+4)     Food(+2)     Thirst(+10)    Sanity(+8)      Cost($7)
     Beer                Life Points(+1)     Food(-4)     Thirst(+5)     Sanity(+1)      Cost($5)
-    Wine                Life Points(+2)     Food(-5)     Thirst(+7)      Sanity(+1)     Cost($10)
+    Wine                Life Points(+2)     Food(-5)     Thirst(+7)     Sanity(+1)      Cost($10)
 }

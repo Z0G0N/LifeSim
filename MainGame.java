@@ -165,33 +165,7 @@ class MainGame {
                 
         // [ ---- Cheat ----]
 
-
-
-        /// [ ---- Player ----]
-
-        if (command.toLowerCase().equals("player") || command.toLowerCase().equals("plr")) {
-            System.out.println(colorText.Clear());
-            System.out.println(player);
-            System.out.println(" ");
-            Game(player);
-        }
-
-        if (command.toLowerCase().equals("test")) {
-            Testing test = new Testing();
-            System.out.println(test.menu());
-            System.out.println(" ");
-            System.out.print(colorText.Red() + "Test - " + cmd + colorText.Reset());
-            String testCMD = scan.nextLine();
-            test.commandArea(testCMD, player);
-            Game(player);
-        }
-        // [ ---- Tutorial ----]
-
-        else if (command.toLowerCase().equals("tutorial")) {
-            tutorial();
-            Game(player);
-        }
-        else if (command.toLowerCase().equals("5409")) {
+        if (command.toLowerCase().equals("5409")) {
             while (true) {
                 CheatMenu cheatMenu = new CheatMenu();
                 System.out.println(colorText.Yellow() + "Cheat Menu" + colorText.Reset());
@@ -325,6 +299,31 @@ class MainGame {
                     break;
                 }
             }
+        }
+
+        /// [ ---- Player ----]
+
+        if (command.toLowerCase().equals("player") || command.toLowerCase().equals("plr")) {
+            System.out.println(colorText.Clear());
+            System.out.println(player);
+            System.out.println(" ");
+            Game(player);
+        }
+
+        if (command.toLowerCase().equals("test")) {
+            Testing test = new Testing();
+            System.out.println(test.menu());
+            System.out.println(" ");
+            System.out.print(colorText.Red() + "Test - " + cmd + colorText.Reset());
+            String testCMD = scan.nextLine();
+            test.commandArea(testCMD, player);
+            Game(player);
+        }
+        // [ ---- Tutorial ----]
+
+        else if (command.toLowerCase().equals("tutorial")) {
+            tutorial();
+            Game(player);
         }
         else {
             System.out.println(colorText.Red() + "That is not a valid command!" + colorText.Reset());
