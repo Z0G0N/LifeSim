@@ -13,42 +13,119 @@ public class Jobs {
 
     public void Delivery(Player player) {
         ColorText colorText = new ColorText();
-        if (player.getDriversLicence()) {
-            int randomLuck = Random(100);
-            Boolean Day;
+        if (player.getHealth() == "Healthy") {
+            if (player.getDriversLicence()) {
+                int randomLuck = Random(100);
+                int randomSickness = Random(1000);
+                Boolean Day;
 
-            if (randomLuck <= 50) {
-                Day = false;
+                if (randomSickness >= 800) {
+                    player.setHealth(Player.HealthList[1 + Random(9)]);
+                    System.out.println(" ");
+                    System.out.println(colorText.Red() + "You got sick!" + colorText.Reset());
+                    System.out.println(" ");
+                }
+
+                if (randomLuck <= 50) {
+                    Day = false;
+                } else {
+                    Day = true;
+                }
+
+                if (Day) {
+                    // --- Good Day ---
+                    int randomCash = Random(20);
+                    player.addCash(randomCash);
+                    player.addSanity(12);
+                    System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and gained 12 sanity points.");
+
+                } else {
+                    // --- Bad Day ---
+                    int randomCash = Random(10);
+                    player.addCash(randomCash);
+                    player.subtractSanity(-2);
+                    System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and lost 2 sanity points.");
+                }
             } else {
-                Day = true;
-            }
-
-            if (Day) {
-                // --- Good Day ---
-                int randomCash = Random(20);
-                player.addCash(randomCash);
-                player.addSanity(12);
-                System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and gained 12 sanity points.");
-
-            } else {
-                // --- Bad Day ---
-                int randomCash = Random(10);
-                player.addCash(randomCash);
-                player.subtractSanity(-2);
-                System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + "and lost 2 sanity points.");
+                System.out.println("You need a drivers licence to be a delivery driver.");
             }
         } else {
-            System.out.println("You need a drivers licence to be a delivery driver.");
+            System.out.println(colorText.Red() + "You are too sick to work." + colorText.Reset());
         }
-        
     }
 
     public void Uber(Player player) {
         //Uber: $15-$25 per hour, driver's license, reliable vehicle, navigation skills, good driving record, customer service skills
         ColorText colorText = new ColorText();
-        if (player.getDriversLicence()) {
+        if (player.getHealth() == "Healthy") {
+            if (player.getDriversLicence()) {
+                int randomLuck = Random(100);
+                int randomSickness = Random(1000);
+                Boolean Day;
+
+                if (randomSickness >= 800) {
+                    player.setHealth(Player.HealthList[1 + Random(9)]);
+                    System.out.println(" ");
+                    System.out.println(colorText.Red() + "You got sick!" + colorText.Reset());
+                    System.out.println(" ");
+                }
+
+                if (randomLuck <= 50) {
+                    Day = false;
+                } else {
+                    Day = true;
+                }
+
+                if (Day) {
+                    // --- Good Day ---
+                    int randomCash = Random(25);
+                    player.addCash(randomCash);
+                    if (player.getSanity() >= 100) {
+                        player.setSanity(100);
+                    } else {
+                        player.addSanity(12);
+                    }
+                    player.subtractThirst(5);
+                    player.subtractLifePoints(5);
+                    player.subtractHunger(5);
+                    System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+
+                } else {
+                    // --- Bad Day ---
+                    int randomCash = Random(15);
+                    player.addCash(randomCash);
+                    if (player.getSanity() <= 0) {
+                        player.setSanity(0);
+                    } else {
+                        player.subtractSanity(-2);
+                    }
+                    player.subtractThirst(5);
+                    player.subtractLifePoints(5);
+                    player.subtractHunger(5);
+                    System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+                }
+            } else {
+                System.out.println("You need a drivers licence to be an Uber driver.");
+            }
+        } else {
+            System.out.println(colorText.Red() + "You are too sick to work." + colorText.Reset());
+        }
+    }
+
+    public void Pizza_worker(Player player) {
+        //Pizza_worker: $8-$12 per hour plus tips, basic math skills, good customer service skills, ability to work in a fast-paced environment
+        ColorText colorText = new ColorText();
+        if (player.getHealth() == "Healthy") {
             int randomLuck = Random(100);
+            int randomSickness = Random(1000);
             Boolean Day;
+
+            if (randomSickness >= 800) {
+                player.setHealth(Player.HealthList[1 + Random(9)]);
+                System.out.println(" ");
+                System.out.println(colorText.Red() + "You got sick!" + colorText.Reset());
+                System.out.println(" ");
+            }
 
             if (randomLuck <= 50) {
                 Day = false;
@@ -56,9 +133,9 @@ public class Jobs {
                 Day = true;
             }
 
-            if (Day) {
+            if (Day) {  
                 // --- Good Day ---
-                int randomCash = Random(25);
+                int randomCash = Random(12);
                 player.addCash(randomCash);
                 if (player.getSanity() >= 100) {
                     player.setSanity(100);
@@ -72,12 +149,12 @@ public class Jobs {
 
             } else {
                 // --- Bad Day ---
-                int randomCash = Random(15);
+                int randomCash = Random(8);
                 player.addCash(randomCash);
                 if (player.getSanity() <= 0) {
                     player.setSanity(0);
                 } else {
-                    player.subtractSanity(-2);
+                    player.addSanity(-2);
                 }
                 player.subtractThirst(5);
                 player.subtractLifePoints(5);
@@ -85,91 +162,61 @@ public class Jobs {
                 System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
             }
         } else {
-            System.out.println("You need a drivers licence to be an Uber driver.");
-        }
-    }
-
-    public void Pizza_worker(Player player) {
-        //Pizza_worker: $8-$12 per hour plus tips, basic math skills, good customer service skills, ability to work in a fast-paced environment
-        ColorText colorText = new ColorText();
-        int randomLuck = Random(100);
-        Boolean Day;
-        if (randomLuck <= 50) {
-            Day = false;
-        } else {
-            Day = true;
-        }
-
-        if (Day) {  
-            // --- Good Day ---
-            int randomCash = Random(12);
-            player.addCash(randomCash);
-            if (player.getSanity() >= 100) {
-                player.setSanity(100);
-            } else {
-                player.addSanity(12);
-            }
-            player.subtractThirst(5);
-            player.subtractLifePoints(5);
-            player.subtractHunger(5);
-            System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
-
-        } else {
-            // --- Bad Day ---
-            int randomCash = Random(8);
-            player.addCash(randomCash);
-            if (player.getSanity() <= 0) {
-                player.setSanity(0);
-            } else {
-                player.addSanity(-2);
-            }
-            player.subtractThirst(5);
-            player.subtractLifePoints(5);
-            player.subtractHunger(5);
-            System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+            System.out.println(colorText.Red() + "You are too sick to work." + colorText.Reset());
         }
     }
 
     public void Fast_Food_Worker(Player player) {
-        //Fast_Food_Worker: $8-$12 per hour plus tips, basic math skills, good customer service skills, ability to work in a fast-paced environment
         ColorText colorText = new ColorText();
-        int randomLuck = Random(100);
-        Boolean Day;
-        
-        if (randomLuck <= 50) {
-            Day = false;
-        } else {
-            Day = true;
-        }
+        if (player.getHealth() == "Healthy") {
+            int randomLuck = Random(100);
+            int randomSickness = Random(1000);
+            Boolean Day;
 
-        if (Day) {
-            // --- Good Day ---
-            int randomCash = Random(12);
-            int tips = Random(5);
-            player.addCash(randomCash + tips);
-            if (player.getSanity() >= 100) {
-                player.setSanity(100);
-            } else {
-                player.addSanity(12);
+            if (randomSickness >= 900) {
+                player.setHealth(Player.HealthList[1 + Random(9)]);
+                System.out.println(" ");
+                System.out.println(colorText.Red() + "You got sick!" + colorText.Reset());
+                System.out.println(" ");
             }
-            player.subtractThirst(5);
-            player.subtractLifePoints(5);
-            player.subtractHunger(5);
-            System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + " and $" + tips + " in tips");
 
-        } else {
-            // --- Bad Day ---
-            int randomCash = Random(8);
-            player.addCash(randomCash);
-            if (player.getSanity() <= 0) {
-                player.setSanity(0);
+            if (randomLuck <= 50) {
+                Day = false;
             } else {
-                player.addSanity(-2);
+                Day = true;
             }
-            player.subtractThirst(5);
-            player.subtractLifePoints(5);
-            player.subtractHunger(5);
-            System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+
+            if (Day) {
+                // --- Good Day ---
+                int randomCash = Random(12);
+                int tips = Random(5);
+                player.addCash(randomCash + tips);
+                if (player.getSanity() >= 100) {
+                    player.setSanity(100);
+                } else {
+                    player.addSanity(12);
+                }
+                player.subtractThirst(5);
+                player.subtractLifePoints(5);
+                player.subtractHunger(5);
+                System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset() + " and $" + tips + " in tips");
+
+            } else {
+                // --- Bad Day ---
+                int randomCash = Random(8);
+                player.addCash(randomCash);
+                if (player.getSanity() <= 0) {
+                    player.setSanity(0);
+                } else {
+                    player.addSanity(-2);
+                }
+                player.subtractThirst(5);
+                player.subtractLifePoints(5);
+                player.subtractHunger(5);
+                System.out.println("You earned a total of " + colorText.Green() +  "$" + randomCash + colorText.Reset());
+            }
+        } else {
+            System.out.println(colorText.Red() + "You are too sick to work." + colorText.Reset());
         }
     }
 

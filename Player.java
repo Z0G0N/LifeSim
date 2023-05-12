@@ -11,12 +11,13 @@ public class Player {
     private String car;
     private String Hardwear;
     private String Softwear;
-    private String health; //Sicknesses
+    private Object health; //Sicknesses
     private String sleep;
     private String bedType;
     private String house;
     private String BrainStatus;
     private Boolean DriversLicence;
+    public static String[] HealthList = { "Healthy","Cold","Flu","Covid","Pneumonia","Asthma","Allergies","Migraine","Stomach flu","Food poisoning"};
     Skills skills;
 
     public Player(String name) {
@@ -31,7 +32,7 @@ public class Player {
         this.Sanity = 100;
         this.Hardwear = "No";
         this.Softwear = "No";
-        this.health = "Healthy";
+        this.health = HealthList[0];
         this.sleep = "Awake";
         this.bedType = "No";
         this.house = "No";
@@ -61,7 +62,7 @@ public class Player {
         return this.Softwear;
     }
 
-    public String getHealth() {
+    public Object getHealth() {
         return this.health;
     }
 
@@ -167,8 +168,8 @@ public class Player {
         this.Softwear = Softwear;
     }
 
-    public void setHealth(String health) {
-        this.health = health;
+    public void setHealth(Object object) {
+        this.health = object;
     }
 
     public void setSleep(String sleep) {
