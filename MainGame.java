@@ -77,7 +77,7 @@ class MainGame {
         }
 
         else if (command.toLowerCase().equals("fast_food_worker") || command.toLowerCase().equals("ffw") || command.toLowerCase().equals("4")) {
-            System.out.println(jobs.Fast_Food_Worker(player));
+            jobs.Fast_Food_Worker(player);
         }
 
         else if (command.toLowerCase().equals("mail_man") || command.toLowerCase().equals("mm") || command.toLowerCase().equals("5")) {
@@ -113,6 +113,37 @@ class MainGame {
     public static void Game(Player player) {
         ColorText colorText = new ColorText();
         Scanner scan = new Scanner(System.in);
+        System.out.println(colorText.Reset());
+        String Hunger, Thirtst, Health, LifePoints;
+        // ---- Hunger ---- //
+        if (player.getHunger() < 50) {
+            Hunger = ("Hunger: " + colorText.Red() + player.getHunger() + colorText.Reset());
+        } else {
+            Hunger = ("Hunger: " + colorText.Green() + player.getHunger() + colorText.Reset());
+        }
+        // ---- Thirst ---- //
+        if (player.getThirst() < 50) {
+            Thirtst = (" / " + "Thirtst: " + colorText.Red() + player.getThirst() + colorText.Reset());
+        } else {
+            Thirtst = (" / " + "Thirtst: " + colorText.Green() + player.getThirst() + colorText.Reset());
+        }
+        // ---- Health ---- //
+        if (player.getHealth() != "Healthy") {
+            Health = (" / " + "Health: " + colorText.Red() + player.getHealth() + colorText.Reset());
+        } else {
+            Health = (" / " + "Health: " + colorText.Green() + player.getHealth() + colorText.Reset());
+        }
+        // ---- Life Points ---- //
+        if (player.getLifePoints() < 50) {
+            LifePoints = (" / " + "Life Points: " + colorText.Red() + player.getLifePoints() + colorText.Reset());
+        } else {
+            LifePoints = (" / " + "Life Points: " + colorText.Green() + player.getLifePoints() + colorText.Reset());
+        }
+        String Level = ("Level: " + colorText.Blue() + player.getLevel() + colorText.Reset());
+        String Exp = (" / Exp: " + colorText.Blue() + player.getExp() + colorText.Reset());
+        String Cash = (" / Cash: " + colorText.Blue() + player.getCash() + colorText.Reset());
+        System.out.println("["  + Hunger + Thirtst + Health + LifePoints + "]" + "\n[" + Level + Exp + Cash + "]");
+        System.out.println(" ");
         System.out.print(colorText.Blue() + cmd + colorText.Reset());
         String command = scan.nextLine();
 
@@ -124,13 +155,16 @@ class MainGame {
                 
         // [ ---- Store ----]
 
-
+        if (command.toLowerCase().equals("store") || command.toLowerCase().equals("s") || command.toLowerCase().equals("buy")) {
+            Store.dealership(player);
+        }
                 
         // [ ---- Other ----]
 
 
                 
         // [ ---- Cheat ----]
+
 
 
         /// [ ---- Player ----]
@@ -142,6 +176,15 @@ class MainGame {
             Game(player);
         }
 
+        if (command.toLowerCase().equals("test")) {
+            Testing test = new Testing();
+            System.out.println(test.menu());
+            System.out.println(" ");
+            System.out.print(colorText.Red() + "Test - " + cmd + colorText.Reset());
+            String testCMD = scan.nextLine();
+            test.commandArea(testCMD, player);
+            Game(player);
+        }
         // [ ---- Tutorial ----]
 
         else if (command.toLowerCase().equals("tutorial")) {
@@ -152,28 +195,7 @@ class MainGame {
             while (true) {
                 CheatMenu cheatMenu = new CheatMenu();
                 System.out.println(colorText.Yellow() + "Cheat Menu" + colorText.Reset());
-                System.out.println(
-                        colorText.Yellow() +
-                                """
-                                    Add / Subtract / Set - lifePoints
-                                    Add / Subtract / Set - Thirst
-                                    Add / Subtract / Set - Hunger
-                                    Add / Subtract / Set - Sanity
-                                    Add / Subtract / Set - level
-                                    Add / Subtract / Set - exp
-                                    Add / Subtract / Set - cash
-                                    Add / Subtract / Set - name
-                                    Add / Subtract / Set - car
-                                    Add / Subtract / Set - Hardwear
-                                    Add / Subtract / Set - Softwear
-                                    Add / Subtract / Set - health - Sickness
-                                    Add / Subtract / Set - sleep
-                                    Add / Subtract / Set - bedType
-                                    Add / Subtract / Set - house
-                                    Add / Subtract / Set - BrainStatus
-                                    Add / Subtract / Set - DriversLicence
-                                """
-                                + colorText.Reset());
+                System.out.println(colorText.Yellow() + "Add / Subtract / Set - lifePoints \nAdd / Subtract / Set - Thirst \nAdd / Subtract / Set - Hunger \nAdd / Subtract / Set - Sanity \nAdd / Subtract / Set - level \nAdd / Subtract / Set - exp \nAdd / Subtract / Set - cash \nAdd / Subtract / Set - name \nAdd / Subtract / Set - car \nAdd / Subtract / Set - Hardwear \nAdd / Subtract / Set - Softwear \nAdd / Subtract / Set - health - Sickness \nAdd / Subtract / Set - sleep \nAdd / Subtract / Set - bedType \nAdd / Subtract / Set - house \nAdd / Subtract / Set - BrainStatus \nAdd / Subtract / Set - DriversLicence \n" + colorText.Reset());
                 System.out.println(" ");
                 System.out.print(colorText.Yellow() + "Cheat: " + cmd + colorText.Reset());
                 String cheatCommand = scan.nextLine();
@@ -304,6 +326,16 @@ class MainGame {
                 }
             }
         }
+        else {
+            System.out.println(colorText.Red() + "That is not a valid command!" + colorText.Reset());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(colorText.Clear());
+            Game(player);
+        }
     }
 
     // ---- Main ---- //
@@ -313,7 +345,6 @@ class MainGame {
 
         // Start Game
         System.out.print(colorText.Clear());
-
         // Welcome Message
         System.out.println("Welcome to " + colorText.Green() + "Life Sim!" + colorText.Reset());
         System.out.print("Let's start with your name: " + colorText.Green());
